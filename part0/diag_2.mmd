@@ -2,10 +2,14 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/spa/new_note
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/spa
     activate server
-    server-->>browser: JSON object
-
+    server-->>browser: the HTML document
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    server-->>browser: the JS script
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    server-->>browser: the CSS file
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    server-->>browser: the JSON object of notes
 
     deactivate server
-
