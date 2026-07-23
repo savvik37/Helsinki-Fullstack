@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/spa/new_note
+    activate server
+    server-->>browser: JSON object
+
+
+    deactivate server
+
